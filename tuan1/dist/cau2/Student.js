@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Student = void 0;
-const Person_1 = require("./Person");
+const Person_1 = require("../cau1/Person");
 class Student extends Person_1.Person {
     constructor(name, age, grade) {
         super(name, age);
