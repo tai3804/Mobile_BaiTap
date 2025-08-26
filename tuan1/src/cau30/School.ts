@@ -1,5 +1,5 @@
 import { Person } from "../cau01/Person";
-import { Student } from "../cau2/Student";
+import { Student } from "../cau02/Student";
 
 // Teacher extends Person
 export class Teacher extends Person {
