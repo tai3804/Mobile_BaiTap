@@ -1,4 +1,4 @@
-import { Person } from "../cau1/Person";
+import { Person } from "../cau01/Person";
 
 export class Student extends Person {
   private grade: number;

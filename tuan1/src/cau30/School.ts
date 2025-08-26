@@ -1,4 +1,4 @@
-import { Person } from "../cau1/Person";
+import { Person } from "../cau01/Person";
 import { Student } from "../cau2/Student";
 
 // Teacher extends Person

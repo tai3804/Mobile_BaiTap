@@ -1,4 +1,4 @@
-import { Animal } from "../cau9/Animal";
+import { Animal } from "../cau09/Animal";
 
 // Cat class extending Animal
 export class Cat implements Animal {
