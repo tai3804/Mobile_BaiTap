@@ -6,8 +6,15 @@ class Person {
         this.name = name;
         this.age = age;
     }
+    getName() {
+        return this.name;
+    }
+    getAge() {
+        return this.age;
+    }
     toString() {
         return `Name: ${this.name}, age: ${this.age}`;
     }
 }
 exports.Person = Person;
+console.log(new Person("Tài", 10));

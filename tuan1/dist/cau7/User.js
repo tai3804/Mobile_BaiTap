@@ -16,3 +16,4 @@ class User {
     }
 }
 exports.User = User;
+console.log(new User("tai").toString());

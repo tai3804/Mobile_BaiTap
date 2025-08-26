@@ -12,3 +12,4 @@ class Student extends Person_1.Person {
     }
 }
 exports.Student = Student;
+console.log(new Student("tai", 10, 10));

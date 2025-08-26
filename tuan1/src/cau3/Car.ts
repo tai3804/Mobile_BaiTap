@@ -13,3 +13,5 @@ export class Car {
     return `Car info: brand ${this.brand}, model: ${this.model}, year: ${this.year}`;
   }
 }
+
+console.log(new Car("Toyota", "black", 2025));

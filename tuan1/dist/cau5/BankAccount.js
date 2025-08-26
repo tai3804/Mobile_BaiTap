@@ -24,3 +24,6 @@ class BankAccount {
     }
 }
 exports.BankAccount = BankAccount;
+const acc = new BankAccount(100);
+console.log(acc.deposit(10));
+console.log(acc.withdraw(200));

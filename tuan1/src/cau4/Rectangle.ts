@@ -19,3 +19,7 @@ export class Recangle {
     return `Reactangle info: width: ${this.width}, height: ${this.height}`;
   }
 }
+
+const rec = new Recangle(10, 20);
+console.log(`area: ${rec.area()}`);
+console.log(`perimeter: ${rec.perimeter()}`);

@@ -12,3 +12,5 @@ export class Student extends Person {
     return super.toString() + `, grade: ${this.grade}`;
   }
 }
+
+console.log(new Student("tai", 10, 10));

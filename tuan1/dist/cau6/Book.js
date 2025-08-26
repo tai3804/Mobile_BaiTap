@@ -12,3 +12,4 @@ class Book {
     }
 }
 exports.Book = Book;
+console.log(new Book("de men phieu luu ki", "kim dong", 2000).toString());

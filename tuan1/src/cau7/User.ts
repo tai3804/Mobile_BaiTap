@@ -17,3 +17,5 @@ export class User {
     return `Your name: ${this.name}`;
   }
 }
+
+console.log(new User("tai").toString());

@@ -25,3 +25,8 @@ export class BankAccount {
     return `Your balance: ${this.balance}`;
   }
 }
+
+const acc = new BankAccount(100);
+
+console.log(acc.deposit(10));
+console.log(acc.withdraw(200));

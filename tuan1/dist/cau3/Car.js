@@ -12,3 +12,4 @@ class Car {
     }
 }
 exports.Car = Car;
+console.log(new Car("Toyota", "black", 2025));

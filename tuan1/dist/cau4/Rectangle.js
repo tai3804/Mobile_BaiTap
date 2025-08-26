@@ -17,3 +17,6 @@ class Recangle {
     }
 }
 exports.Recangle = Recangle;
+const rec = new Recangle(10, 20);
+console.log(`area: ${rec.area()}`);
+console.log(`perimeter: ${rec.perimeter()}`);

@@ -13,3 +13,5 @@ export class Book {
     return `Book info: title: ${this.title}, author: ${this.author}, year: ${this.year}`;
   }
 }
+
+console.log(new Book("de men phieu luu ki", "kim dong", 2000).toString());
