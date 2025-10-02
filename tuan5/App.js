@@ -13,8 +13,9 @@ export default function App() {
         screenOptions={{
       headerShown: false,  // Ẩn header
   }}>
-        <Stack.Screen name="color" component={Color} />
         <Stack.Screen name="detail" component={Detail} />
+        
+        <Stack.Screen name="color" component={Color} />
       </Stack.Navigator>
     </NavigationContainer>
   );
