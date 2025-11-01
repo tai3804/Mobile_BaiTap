@@ -1,14 +1,26 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { View, TextInput, Alert, Text, TouchableOpacity, StyleSheet, ScrollView, SafeAreaView } from "react-native";
 import { ExpenseDB } from "../database/expenseDB";
 import { useRouter } from "expo-router";
 
 export default function AddExpense() {
   const [type, setType] = useState<"Thu" | "Chi">("Thu");
-  const [title, setTitle] = useState("");
-  const [amount, setAmount] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+  
+  // Sử dụng useRef để quản lý input fields
+  const titleInputRef = useRef<TextInput>(null);
+  const amountInputRef = useRef<TextInput>(null);
+  const [title, setTitle] = useState("");
+  const [amount, setAmount] = useState("");
+
+  // Hàm clear tất cả input fields
+  const clearInputs = () => {
+    setTitle("");
+    setAmount("");
+    titleInputRef.current?.clear();
+    amountInputRef.current?.clear();
+  };
 
   const onSave = async () => {
     // Validate input
@@ -30,8 +42,8 @@ export default function AddExpense() {
           {
             text: "OK",
             onPress: () => {
-              setTitle("");
-              setAmount("");
+              // Sử dụng hàm clearInputs để clear tất cả input fields
+              clearInputs();
               router.back();
             }
           }
@@ -78,6 +90,7 @@ export default function AddExpense() {
           <View style={styles.inputGroup}>
             <Text style={styles.label}>Tên khoản *</Text>
             <TextInput
+              ref={titleInputRef}
               value={title}
               onChangeText={setTitle}
               placeholder="Ví dụ: Ăn trưa, Lương tháng..."
@@ -89,6 +102,7 @@ export default function AddExpense() {
           <View style={styles.inputGroup}>
             <Text style={styles.label}>Số tiền (VNĐ) *</Text>
             <TextInput
+              ref={amountInputRef}
               value={amount}
               onChangeText={handleAmountChange}
               placeholder="0"
@@ -130,6 +144,13 @@ export default function AddExpense() {
             <Text style={styles.saveButtonText}>
               {isLoading ? "Đang lưu..." : "💾 Lưu"}
             </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.clearButton}
+            onPress={clearInputs}
+          >
+            <Text style={styles.clearButtonText}>🗑️ Xóa nội dung</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -257,6 +278,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   cancelButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  clearButton: {
+    backgroundColor: '#fd79a8',
+    paddingVertical: 16,
+    borderRadius: 12,
+    alignItems: 'center',
+  },
+  clearButtonText: {
     color: '#fff',
     fontSize: 16,
     fontWeight: '600',
